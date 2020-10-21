@@ -1,0 +1,128 @@
+page{
+  background-color: rgb(245,245,245);
+  padding-top: 100rpx;
+}
+.home_page{
+  .count_detail{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 150rpx;
+    padding: 20rpx 30rpx;
+    margin: 30rpx;
+    transition: all 0.5s;
+    .pay_type{
+      flex: 1;
+      color: #fff;
+      font-size: 50rpx;
+    }
+    .pay_num{
+      flex: 1;
+      float: right;
+      input{
+        float: right;
+        color: #fff;
+        height: 100rpx;
+        text-align: right;
+        font-size: 70rpx;
+      }
+    }
+  }
+  .choose_btn{
+    margin: 0 30rpx;
+    padding: 20rpx 0 20rpx 20rpx;
+    display: flex;
+    background-color: #fff;
+    .at-button{
+      flex: 2;
+    }
+    .date{
+      flex: 1;
+      font-size: 30rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .choose_pay_card{
+    margin: 0 30rpx;
+    padding: 20rpx 0 20rpx 20rpx;
+    display: flex;
+    background-color: #fff;
+    .at-button{
+      flex: 2;
+    }
+    .pay_card_name{
+      flex: 1;
+      font-size: 30rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .pay_type_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20rpx 30rpx;
+    background-color: #fff;
+    .select_type_item{
+      width: 100rpx;
+      margin: 30rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .img_wrap{
+        width: 130rpx;
+        height: 130rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        image{
+          width: 100rpx;
+          height: 100rpx;
+        }
+      }
+      .type_name{
+        font-size: 30rpx;
+      }
+    }
+  }
+  .submit_btn{
+    position: fixed;
+    bottom: 50rpx;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    view{
+      width: 50%;
+      height: 100rpx;
+      line-height: 100rpx;
+      font-size: 45rpx;
+      color: #fff;
+      transition: all 0.5s;
+      border-radius: 20rpx;
+      text-align: center;
+    }
+  }
+  .choose_date{
+    background-color: #fff;
+  }
+  .pay_card_items{
+    display: flex;
+    height: 100rpx;
+    align-items: center;
+    justify-content: center;
+    .pay_card_name{
+      color: #fff;
+      flex: 1;
+    }
+    .pay_card_value{
+      color: #fff;
+      flex: 1;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+page{
+  background-color: rgb(245, 245, 245);
+}
+.ChartDetail_page{
+  margin: 30rpx;
+  .top_tabbar{
+    position: sticky;
+    top: 0;
+  }
+  .barChartNav{
+    overflow-x: auto;
+    display: flex;
+    background-color: #fff;
+    padding: 0 30rpx;
+    .bar_chart_line{
+      display: flex;
+      flex-direction: column;
+      padding: 10rpx;
+      margin: 30rpx 0;
+      .bar_chart_line_item{
+        flex: 1;
+        margin: 20rpx 0;
+        text-align: right;
+        color: rgb(105, 105, 105);
+      }
+    }
+    .bar_chart_wrap{
+      display: flex;
+      flex-direction: column;
+      padding: 10rpx 20rpx;
+      border-left: 2rpx solid rgb(46, 46, 46);
+      // border-bottom: 2rpx solid #000;
+      margin: 30rpx 0;
+      .bar_chart_item_nav{
+        border-radius: 10rpx;
+        transition: all 0.7s;
+        width: 100%;
+        &:hover{
+          background-color: rgba($color: #383838, $alpha: 0.3);
+        }
+        .bar_chart_item{
+          // flex: 1;
+          background-color: #3398DB;
+          // width: 1rpx;
+          height: 60rpx;
+          margin: 20rpx 0;
+          transition: all 0.7s;
+          color: #fff;
+          font-size: 30rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      
+    }
+  }
+  .chart_detail_msg{
+    width: 100%;
+    height: 200rpx;
+    padding: 80rpx 0;
+    background-color: #fff;
+    border-radius: 50rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .month{
+      text-align: center;
+    }
+    .pay_msg{
+      text-align: center;
+      font-weight: 900;
+      font-size: 50rpx;
+      color: rgb(179, 46, 46)
+    }
+  }
+}

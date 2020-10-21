@@ -1,0 +1,20 @@
+.nav_bar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .nav_item{
+    flex: 1;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.hover_nav{
+  color: #ff6b58;
+  border-bottom: 1px solid #ff6b58;
+}

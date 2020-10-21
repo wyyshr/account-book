@@ -1,0 +1,125 @@
+page{
+  padding-top: 20rpx;
+}
+.account_page{
+  .login_btn{
+    text-align: center;
+    position: relative;
+    top: 200rpx;
+    .login_btn_text{
+      display: inline-block;
+      width: 300rpx;
+      background-color: #ff8776;
+      text-align: center;
+      height: 100rpx;
+      line-height: 100rpx;
+      border-radius: 50rpx;
+      color: #fff;
+    }
+  }
+  .top_tabbar{
+    background-color: #fff;
+    margin-bottom: 30rpx;
+  }
+  .add_budget{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50rpx;
+    .add_budget_view{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0.7rpx solid rgb(202, 199, 199);
+      border-radius: 50rpx;
+      width: 250rpx;
+      height: 60rpx;
+      .add_budget_text{
+        font-size: 30rpx;
+      }
+    }
+    
+  }
+  .account_view{
+    width: 100vw;
+    height: 200rpx;
+    display: flex;
+    .left_inCome{
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      border-right: 1rpx solid rgb(182, 175, 175);
+      .inCome_text{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        color: rgb(119, 119, 119);
+      }
+      .inCome_money{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 60rpx;
+        color: rgb(70, 70, 70);
+      }
+    }
+    .right_outCome{
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      .outCome_text{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        color: rgb(119, 119, 119);
+      }
+      .outCome_money{
+        flex: 2;
+        display: flex;
+        align-items: center;
+        font-weight: 900;
+        font-size: 60rpx;
+        color: rgb(70, 70, 70);
+      }
+    }
+  }
+  .account_btn_view{
+    text-align: center;
+    .account_btn{
+      background-color: #fff;
+      position: relative;
+      top: -50rpx;
+      display: inline-block;
+      border-radius: 50%;
+      width: 200rpx;
+      height: 200rpx;
+      border: 5px solid #EE504F;
+      text-align: center;
+      line-height: 200rpx;
+      color: #EE504F;
+      font-weight: 500;
+    }
+  }
+  .budget_input_view{
+    height: 300rpx;
+    padding: 30rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    border: 5rpx solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sure_btn{
+    display: flex;
+    margin-top: 50rpx;
+    .at-button{
+      flex: 1;
+      margin: 0 20rpx;
+    }
+  }
+}
