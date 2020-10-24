@@ -122,4 +122,22 @@ page{
       margin: 0 20rpx;
     }
   }
+  .pay_tip_nav{
+    position: fixed;
+    bottom: 30rpx;
+    right: 30rpx;
+    .at-fab{
+      background-color: #e86161;
+    }
+  }
+  .add_tip_view{
+    height: 470rpx;
+    padding: 30rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    border: 5rpx solid #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

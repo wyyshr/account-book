@@ -8,4 +8,6 @@ export const request_url = {
   getMonthPay:      '/user/getMonthPay',      // 获取当月消费
   deleteAccount:    '/user/deleteAccount',    // 删除账户
   getAllMonthPay:   '/user/getAllMonthPay',   // 获取消费记录
+  addPayTip:        '/user/addPayTip',        // 设置缴费提示
+  getPayTip:        '/user/getPayTip',        // 获取缴费提示
 }
