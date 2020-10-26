@@ -105,6 +105,11 @@ class Account extends React.Component<AccountProps, AccountState> {
     this.setState({ 
       inCome: (res as GetMonthResType).all_pay.inCome,
       outCome: (res as GetMonthResType).all_pay.outCome
+    },() => {
+      Taro.setStorageSync('monthPay',{
+        inCome: (res as GetMonthResType).all_pay.inCome,
+        outCome: (res as GetMonthResType).all_pay.outCome
+      })
     })
   }
   // 获取预算

@@ -10,4 +10,5 @@ export const request_url = {
   getAllMonthPay:   '/user/getAllMonthPay',   // 获取消费记录
   addPayTip:        '/user/addPayTip',        // 设置缴费提示
   getPayTip:        '/user/getPayTip',        // 获取缴费提示
+  getTypePay:       '/user/getTypePay',       // 获取不同消费类别消费
 }
