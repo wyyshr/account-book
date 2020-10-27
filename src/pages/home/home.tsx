@@ -96,7 +96,7 @@ class Home extends React.Component<HomeProps, HomeState> {
       allAccounts: [
         ...allAccounts
       ],
-      payCardName: allAccounts[0].name
+      payCardName: allAccounts[0]?.name || ''
     })
   }
   inputPayNum = (e) => {
@@ -140,7 +140,11 @@ class Home extends React.Component<HomeProps, HomeState> {
   }
   // 确认提交
   submitDetail = async () => {
-    const { select_item, account_index, pay_num, date, pay_type, payCardName } = this.state
+    const { select_item, account_index, pay_num, date, pay_type, payCardName, allAccounts } = this.state
+    if(allAccounts.length == 0) return Taro.atMessage({
+      'message': '暂无账户，请先去添加账户',
+      'type': 'error'
+    })
     const {nickName=''} = Taro.getStorageSync('userInfo') || ''
     const data = {
       username: nickName,
@@ -285,10 +289,13 @@ class Home extends React.Component<HomeProps, HomeState> {
           <AtButton type="secondary" size='small' onClick={this.showModal}>选择日期</AtButton>
           <Text className="date" style={{color: `${type_color}`}}>{date}</Text>
         </View>
-        <View className="choose_pay_card">
-          <AtButton type="secondary" size='small' onClick={this.showPayCard}>选择账户</AtButton>
-          <Text className="pay_card_name" style={{color: `${type_color}`}}>{payCardName}</Text>
-        </View>
+        {
+          allAccounts.length > 0 && <View className="choose_pay_card">
+            <AtButton type="secondary" size='small' onClick={this.showPayCard}>选择账户</AtButton>
+            <Text className="pay_card_name" style={{color: `${type_color}`}}>{payCardName}</Text>
+          </View>
+        }
+        
         {/* 消费类型 */}
         <View className="pay_type_wrap">
           {

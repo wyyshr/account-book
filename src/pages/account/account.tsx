@@ -94,11 +94,13 @@ class Account extends React.Component<AccountProps, AccountState> {
   async getMonthPay(userInfo) {
     const date = new Date()
     const month =  date.getMonth()+1
+    const year = date.getFullYear()
     const res = await ajax({
       url: request_url.getMonthPay,
       data: {
         username: userInfo.nickName,
-        month: month.toString()
+        month: month.toString(),
+        year: year.toString()
       }
     });
     (res as GetMonthResType).type == "success" &&
@@ -115,12 +117,15 @@ class Account extends React.Component<AccountProps, AccountState> {
   // 获取预算
   async getBudget(userInfo) {
     const { budgetCount } = this.state
+    const month = new Date().getMonth() + 1
     const res = await ajax({
       url: request_url.getBudget,
       data: {
-        username: userInfo.nickName
+        username: userInfo.nickName,
+        month
       }
     })
+    console.log(res);
     
     if((res as BudgetArray).length>=1){
       (res as BudgetArray).forEach(v => {
@@ -206,18 +211,25 @@ class Account extends React.Component<AccountProps, AccountState> {
   }
   // 设置预算
   async setBudget(userInfo,accountBook,budge) {
+    const month = new Date().getMonth() + 1
     const res = await ajax({
       url: request_url.setBudget,
       data: {
         username: userInfo.nickName,
         accountBook,
-        budge
+        budge,
+        month
       }
     })
     if(res == 'success'){
       Taro.atMessage({
         'message': '设置成功',
         'type': 'success'
+      })
+    }else{
+      Taro.atMessage({
+        'message': '网络错误',
+        'type': 'error'
       })
     }
   }

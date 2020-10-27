@@ -11,4 +11,5 @@ export const request_url = {
   addPayTip:        '/user/addPayTip',        // 设置缴费提示
   getPayTip:        '/user/getPayTip',        // 获取缴费提示
   getTypePay:       '/user/getTypePay',       // 获取不同消费类别消费
+  getOneDayPay:     '/user/getOneDayPay',     // 获取某天消费
 }

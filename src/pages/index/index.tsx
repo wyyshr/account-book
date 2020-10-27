@@ -187,6 +187,11 @@ class Index extends React.Component<IndexProps, IndexState> {
         'message': '设置成功',
         'type': 'success'
       })
+    }else{
+      Taro.atMessage({
+        'message': '网络错误',
+        'type': 'error'
+      })
     }
   }
   showDeleteModal = (name) => {
@@ -248,7 +253,8 @@ class Index extends React.Component<IndexProps, IndexState> {
             <AtIcon value="add" />
           </Text>
         </View>
-        <View className="all_accounts">
+        {
+          allAccounts.length > 0 ? <View className="all_accounts">
           <Text className="title">全部账户({allAccounts.length})</Text>
           <View className="account_cards">
             {
@@ -265,7 +271,10 @@ class Index extends React.Component<IndexProps, IndexState> {
               })
             }
           </View>
-        </View>
+        </View> : 
+        <View className="no_data">暂无资产</View>
+        }
+        
         {/* 添加资产弹框 */}
         <AtCurtain 
           isOpened={isOpenModal}

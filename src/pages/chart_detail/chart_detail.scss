@@ -7,6 +7,18 @@ page{
     position: sticky;
     top: 0;
   }
+  .year_month_tabbar{
+    background-color: #fff;
+    padding-left: 60%;
+    padding-right: 20rpx;
+    padding-top: 30rpx;
+    .at-tab-bar__item{
+      border: 1px solid #ccc;
+    }
+    .at-tab-bar__item--active{
+      border: 1px solid #db3333;
+    }
+  }
   .title{
     background-color: #fff;
     padding-left: 50rpx;
@@ -25,10 +37,15 @@ page{
       padding: 10rpx;
       margin: 30rpx 0;
       .bar_chart_line_item{
+        width: 130rpx;
         flex: 1;
         margin: 20rpx 0;
         text-align: right;
         color: rgb(105, 105, 105);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 35rpx;
       }
     }
     .bar_chart_wrap{
@@ -185,6 +202,34 @@ page{
         background-color: #DB3333!important;
         border: 1PX solid #DB3333;
       }
+    }
+  }
+  .choose_date_wrap{
+    margin-top: 30rpx;
+    background-color: #fff;
+    padding-bottom: 30rpx;
+    .choose_date_picker{
+      padding: 0 30rpx;
+      margin-top: 20rpx;
+    }
+    .choose_day_item_wrap{
+      padding: 0 50rpx;
+      .choose_day_item{
+        display: flex;
+        height: 120rpx;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1rpx solid rgb(230, 230, 230);
+        text{
+          flex: 1;
+          text-align: center;
+        }
+      }
+    }
+    .no_data{
+      text-align: center;
+      margin-top: 30rpx;
+      color: #ccc;
     }
   }
 }
