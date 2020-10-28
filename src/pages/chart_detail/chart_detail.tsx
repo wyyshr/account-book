@@ -383,10 +383,10 @@ class ChartDetail extends React.Component<ChartDetailProps, ChartDetailState> {
         <View className="title">{year_or_month == 0 ? "本月" : "本年"}{choose_pay_type}：{payNum}</View>
         <View className="select_type">
           <View className="loading">
-            <View className="left" style={typeRate < 50 ? {backgroundColor: '#DB3333'} : {backgroundColor: '#999999'}}>
+            <View className="left" style={typeRate <= 50 ? {backgroundColor: '#DB3333'} : {backgroundColor: '#999999'}}>
               <View className="after" style={typeRate > 50 ? {backgroundColor: '#DB3333'} : {backgroundColor: '#999999'}}></View>
             </View>
-            <View className="right" style={typeRate < 50 ? {backgroundColor: '#DB3333'} : {backgroundColor: '#999999'}}>
+            <View className="right" style={typeRate <= 50 ? {backgroundColor: '#DB3333'} : {backgroundColor: '#999999'}}>
               <View className="after" style={typeRate > 50 ? {backgroundColor: '#DB3333',transform: `rotateZ(${(typeRate/100)*360}deg)`} : {backgroundColor: '#999999',transform: `rotateZ(${(typeRate/100)*360}deg)`}}></View>
             </View>
             <View className="progress">{typeRate.toFixed(2)}%</View>
@@ -409,7 +409,7 @@ class ChartDetail extends React.Component<ChartDetailProps, ChartDetailState> {
         <View className='choose_date_wrap'>
           <View className="title">{chooseDate} {come_type == 0 ? '支出' : '收入'}记录</View>
           <View className="choose_date_picker">
-            <Picker mode='date' onChange={this.handleChooseDate}>
+            <Picker mode='date' onChange={this.handleChooseDate} value={chooseDate}>
               <AtList>
                 <AtListItem title='请选择日期' extraText={chooseDate} />
               </AtList>

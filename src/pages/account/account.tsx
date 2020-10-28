@@ -346,8 +346,8 @@ class Account extends React.Component<AccountProps, AccountState> {
           {/* 添加预算 */}
           <View className="add_budget">
             <View className="add_budget_view" onClick={this.addBudgetClick}>
-              <Text className="add_budget_text" style={current_index!==0?{display: 'none'}:''}>{first==''?'添加预算':`预算：${first}`}</Text>
-              <Text className="add_budget_text" style={current_index==0?{display: 'none'}:''}>{second==''?'添加预算':`预算：${second}`}</Text>
+            <Text className="add_budget_text" style={current_index!==0?{display: 'none'}:''}>{first==''?'添加预算':<Text>预算：<Text style={parseInt(first)<10 ? {color: 'red'} : ''}>{first}</Text></Text>}</Text>
+            <Text className="add_budget_text" style={current_index==0?{display: 'none'}:''}>{second==''?'添加预算':<Text>预算：<Text style={parseInt(second)<10 ? {color: 'red'} : ''}>{second}</Text></Text>}</Text>
             </View>
           </View>
           {/* 收入支出 */}
@@ -412,7 +412,7 @@ class Account extends React.Component<AccountProps, AccountState> {
                   value={payTipNum}
                   onChange={this.handleChangePayTipNum}
                 />
-                <Picker mode='date' onChange={this.handleChooseDate}>
+                <Picker mode='date' onChange={this.handleChooseDate} value={payTipDate} >
                   <AtList>
                     <AtListItem title='缴费日期' extraText={payTipDate} />
                   </AtList>
