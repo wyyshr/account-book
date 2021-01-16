@@ -29,6 +29,7 @@ export interface HomeState {
     backgroundColor: string
   }>
   payCardName: string           // 支付账户名
+  startDate: number             // 当月开始时间
 }
 interface Routerprops{
   app: object
@@ -61,7 +62,8 @@ class Home extends React.Component<HomeProps, HomeState> {
       account_index: '',
       isChoosePayCardShow: false,
       allAccounts: [],
-      payCardName: ''
+      payCardName: '',
+      startDate: 0
     };
   }
   componentDidMount() {
@@ -77,6 +79,13 @@ class Home extends React.Component<HomeProps, HomeState> {
     })
     const userInfo = Taro.getStorageSync('userInfo') || ''
     this.getAccount(userInfo)
+    this.setTime()
+  }
+  setTime = () => {
+    const data = new Date();
+    data.setDate(0);
+    const startDate = data.getTime()
+    this.setState({ startDate })
   }
   // 获取资产
   async getAccount(userinfo){
@@ -188,7 +197,7 @@ class Home extends React.Component<HomeProps, HomeState> {
         title: '收入'
       }
     ]
-    const { pay_type, type_color, select_item, isOpendate, date, pay_num, isChoosePayCardShow, allAccounts, payCardName } = this.state
+    const { pay_type, type_color, select_item, isOpendate, date, pay_num, isChoosePayCardShow, allAccounts, payCardName, startDate } = this.state
     const type_items_0 = [
       {
         type_name: '餐饮',
@@ -321,7 +330,7 @@ class Home extends React.Component<HomeProps, HomeState> {
           closeBtnPosition="top-right"
           onClose={this.handleCloseModal} >
           <View className="choose_date">
-            <AtCalendar onDayClick={this.onDayClick} />
+            <AtCalendar onDayClick={this.onDayClick} minDate={startDate} maxDate={Date.now()} />
           </View>
           </AtCurtain>
           <AtMessage />

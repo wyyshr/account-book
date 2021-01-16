@@ -125,8 +125,6 @@ class Account extends React.Component<AccountProps, AccountState> {
         month
       }
     })
-    console.log(res);
-    
     if((res as BudgetArray).length>=1){
       (res as BudgetArray).forEach(v => {
         if(v.accountBook == 0){
@@ -284,15 +282,13 @@ class Account extends React.Component<AccountProps, AccountState> {
       data
     })
     if(res == 'success'){
-      Taro.atMessage({
-        'message': '设置成功',
-        'type': 'success'
-      })
+      Taro.atMessage({ 'message': '设置成功', 'type': 'success' })
       this.setState({
         isOpenAddTipModal: false,
         payTipName: '',
         payTipNum: ''
       })
+      this.getPayTip(userInfo)
     }else{
       Taro.atMessage({
         'message': '设置失败，请检查网络',
