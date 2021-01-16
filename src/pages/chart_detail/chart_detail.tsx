@@ -198,7 +198,7 @@ class ChartDetail extends React.Component<ChartDetailProps, ChartDetailState> {
     if(res != 'error'){
       const payArr = res as Array<{pay_num:string}>
       payArr.forEach(v => {
-        payNum += parseInt(v.pay_num)
+        payNum += parseFloat(v.pay_num)
       });
       this.setState({payNum})
     }
@@ -262,7 +262,7 @@ class ChartDetail extends React.Component<ChartDetailProps, ChartDetailState> {
     for (let i = 0; i < chooseDayArr1.length; i++) {
       for (let j = i+1; j < chooseDayArr1.length; j++) {
         if(chooseDayArr1[i].pay_type == chooseDayArr1[j].pay_type){
-          chooseDayArr1[i].pay_num = parseInt(chooseDayArr1[i].pay_num) + parseInt(chooseDayArr1[j].pay_num)
+          chooseDayArr1[i].pay_num = parseFloat(chooseDayArr1[i].pay_num) + parseFloat(chooseDayArr1[j].pay_num)
           chooseDayArr1.splice(j,1)
         }
       }

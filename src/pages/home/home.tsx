@@ -7,6 +7,9 @@ import Taro from "@tarojs/taro";
 import { ajax } from "../../util/ajax";
 import { request_url } from "../../util/config";
 import './home.scss'
+import {  type_1, type_2, type_3, type_4, type_5, type_6, type_7, type_8,
+  type_1_1, type_1_2, type_1_3, type_1_4, type_1_5, type_1_6, type_1_7, type_1_8,
+} from '../../assets';
 export interface HomeProps {
   
 }
@@ -103,8 +106,6 @@ class Home extends React.Component<HomeProps, HomeState> {
     this.setState({
       pay_num: e.detail.value
     })
-    console.log(this.state.pay_num);
-    
   }
   selectItem = (id) => {
     this.setState({
@@ -163,7 +164,8 @@ class Home extends React.Component<HomeProps, HomeState> {
       Taro.atMessage({
         'message': (res as Accountreq).msg,
         'type': (res as Accountreq).type
-      })
+      });
+      (res as Accountreq).type !== 'error' && setTimeout(() => {Taro.navigateBack({delta: 1})}, 1800);
     }
   }
   showPayCard = () => {
@@ -190,84 +192,84 @@ class Home extends React.Component<HomeProps, HomeState> {
     const type_items_0 = [
       {
         type_name: '餐饮',
-        icon: '../../assets/img/type_1.png',
+        icon: type_1,
         color: '#F5A623'
       },
       {
         type_name: '交通',
-        icon: '../../assets/img/type_2.png',
+        icon: type_2,
         color: '#84BC3C'
       },
       {
         type_name: '购物',
-        icon: '../../assets/img/type_3.png',
+        icon: type_3,
         color: '#7687F1'
       },
       {
         type_name: '居住',
-        icon: '../../assets/img/type_4.png',
+        icon: type_4,
         color: '#F9939C'
       },
       {
         type_name: '娱乐',
-        icon: '../../assets/img/type_5.png',
+        icon: type_5,
         color: '#8DD365'
       },
       {
         type_name: '医疗',
-        icon: '../../assets/img/type_6.png',
+        icon: type_6,
         color: '#D81E06'
       },
       {
         type_name: '教育',
-        icon: '../../assets/img/type_7.png',
+        icon: type_7,
         color: '#F5BF0F'
       },
       {
         type_name: '其他',
-        icon: '../../assets/img/type_8.png',
+        icon: type_8,
         color: '#15C1A9'
       }
     ]
     const type_items_1 = [
       {
         type_name: '工资',
-        icon: '../../assets/img/type_1_1.png',
+        icon: type_1_1,
         color: '#FF8965'
       },
       {
         type_name: '红包',
-        icon: '../../assets/img/type_1_2.png',
+        icon: type_1_2,
         color: '#D81E06'
       },
       {
         type_name: '生活费',
-        icon: '../../assets/img/type_1_3.png',
+        icon: type_1_3,
         color: '#F8D02D'
       },
       {
         type_name: '奖金',
-        icon: '../../assets/img/type_1_4.png',
+        icon: type_1_4,
         color: '#F8D02D'
       },
       {
         type_name: '报销',
-        icon: '../../assets/img/type_1_5.png',
+        icon: type_1_5,
         color: '#3DA8F5'
       },
       {
         type_name: '兼职',
-        icon: '../../assets/img/type_1_6.png',
+        icon: type_1_6,
         color: '#FF7B22'
       },
       {
         type_name: '投资',
-        icon: '../../assets/img/type_1_7.png',
+        icon: type_1_7,
         color: '#4387DD'
       },
       {
         type_name: '其他',
-        icon: '../../assets/img/type_1_8.png',
+        icon: type_1_8,
         color: '#000000'
       }
     ]

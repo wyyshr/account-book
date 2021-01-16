@@ -239,7 +239,7 @@ class Index extends React.Component<IndexProps, IndexState> {
     const { allAccounts, isOpenModal, money_accout_card: { name, value }, chooseColorIndex, isShowDeleteModal } = this.state
     const colors = ['#F5A623','#84BC3C','#7687F1','#F9939C']
     const all_money = allAccounts.reduce((preVal,n) => {
-      return preVal + parseInt(n.value)
+      return preVal + parseFloat(n.value)
     },0);
     
     return ( 
@@ -262,7 +262,7 @@ class Index extends React.Component<IndexProps, IndexState> {
                 return (
                   <View className="all_account_item" key={i} style={{backgroundColor}}>
                     <Text className="card_name">{name}</Text>
-                    <Text className="card_value">{parseInt(value).toFixed(2)}</Text>
+                    <Text className="card_value">{parseFloat(value).toFixed(2)}</Text>
                     <Text className="card_close_icon" onClick={()=>this.showDeleteModal(name)}>
                       <AtIcon value="close" size={15} />
                     </Text>
